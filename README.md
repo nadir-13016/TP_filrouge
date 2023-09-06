@@ -81,27 +81,32 @@ Si vous modifiez ces ports, assurez-vous également de mettre à jour les réfé
 
 1. Clonez ce dépôt :
     ```bash
-    git clone https://github.com/Mossbaddi/Pojet_fil_rouge.git
-    ```
-
-2. Installez les dépendances pour chaque service :
-    ```bash
-    cd client && npm install
-    cd ../posts && npm install
-    # Répétez pour tous les services
+    git clone https://github.com/nadir-13016/TP_filrouge.git
     ```
 
 ## Déploiement
+1.  lancer dans la commande suivante pour instancier l'ingress:
 
-1. Construisez les images Docker pour chaque service :
+    ```bash
+      kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
+      
+    ```
+
+
+2. Construisez les images Docker pour chaque service :
     ```bash
     docker build -t client ./client
     docker build -t posts ./posts
-    # Répétez pour tous les services
+    docker build -t comments ./comments
+    docker build -t event-bus ./event-bus
+    docker build -t moderation ./moderation
+    docker build -t query ./query
     ```
 
-2. Déployez les services sur Kubernetes :
+3. Déployez les services sur Kubernetes :
     ```bash
-    kubectl apply -f k8s/
+    kubectl apply -f ./Pojet_fil_rouge/k8s/
     ```
- 
+
+4. Maintenant vous pouvez aller sur le localhost en cliquant sur le liens suivant 
+        http://localhost/
