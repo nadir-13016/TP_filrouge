@@ -89,7 +89,7 @@ Si vous modifiez ces ports, assurez-vous également de mettre à jour les réfé
 
     ```bash
       kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
-      
+
     ```
 
 
@@ -108,5 +108,5 @@ Si vous modifiez ces ports, assurez-vous également de mettre à jour les réfé
     kubectl apply -f ./Pojet_fil_rouge/k8s/
     ```
 
-4. Maintenant vous pouvez aller sur le localhost en cliquant sur le liens suivant 
+4. Maintenant vous pouvez aller sur le localhost en cliquant sur le liens suivant, ou en copiant le liens suivant sur votre navigateur:
         http://localhost/
